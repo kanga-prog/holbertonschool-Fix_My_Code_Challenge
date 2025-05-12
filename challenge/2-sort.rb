@@ -1,13 +1,10 @@
 #!/usr/bin/env ruby
 
-# Récupère les arguments de la ligne de commande
-args = ARGV
+# Récupère les arguments numériques depuis ARGV
+numbers = ARGV.select { |arg| arg.match?(/^[-+]?\d+$/) }.map(&:to_i)
 
-# Filtrer uniquement les arguments numériques valides
-numbers = args.select { |arg| arg.match?(/^[-+]?\d+$/) }.map(&:to_i)
+# Tri en ordre croissant (et non décroissant)
+sorted = numbers.sort
 
-# Trier en ordre décroissant
-sorted = numbers.sort.reverse
-
-# Afficher chaque nombre
+# Affichage ligne par ligne
 sorted.each { |n| puts n }
