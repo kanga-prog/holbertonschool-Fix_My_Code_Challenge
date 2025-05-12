@@ -2,15 +2,17 @@
 import sys
 
 def fizzbuzz(n):
+    output = []
     for i in range(1, n + 1):
         if i % 15 == 0:
-            print("FizzBuzz", end=" ")
+            output.append("FizzBuzz")
         elif i % 3 == 0:
-            print("Fizz", end=" ")
+            output.append("Fizz")
         elif i % 5 == 0:
-            print("Buzz", end=" ")
+            output.append("Buzz")
         else:
-            print(i, end=" ")
+            output.append(str(i))
+    print(" ".join(output))
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
